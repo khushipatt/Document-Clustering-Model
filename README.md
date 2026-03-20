@@ -1,10 +1,10 @@
-# 📄 Document Clustering — NLP Sem 6 Project
+# Document Clustering — NLP Sem 6 Project
 
 This is a web app I built for my Sem 6 NLP project. The idea is pretty simple — you give it a pile of text documents and it figures out which ones are talking about similar things, then groups them together automatically. No manual labeling needed.
 
 ---
 
-## 🧠 What's the point of this?
+## What's the point of this?
 
 Say you have 500 news articles sitting in a CSV. You don't want to read through all of them just to figure out which ones are about sports, which are about tech, and which are about health. This app does that for you in seconds.
 
@@ -12,7 +12,7 @@ You just upload your file, pick an algorithm, hit run — and it shows you the g
 
 ---
 
-## 🚀 Running it locally
+## Running it locally
 
 **1. Install the packages**
 ```bash
@@ -28,7 +28,7 @@ streamlit run app.py
 
 ---
 
-## 📁 What's in the repo
+## What's in the repo
 
 ```
 ├── app.py            # The Streamlit UI — everything the user sees
@@ -40,7 +40,7 @@ streamlit run app.py
 
 ---
 
-## 🔬 How it actually works
+## How it actually works
 
 ### Step 1 — You upload your data
 Either a CSV (pick which column has your text) or a plain TXT file where each paragraph is treated as one document. There's also sample data built in if you just want to see it in action — it covers Tech, Sports, Health, and Finance topics.
@@ -75,7 +75,7 @@ Once it's done clustering, the app shows you:
 
 ---
 
-## ⚙️ What you can configure
+## What you can configure
 
 Everything's in the sidebar on the left:
 
@@ -88,7 +88,7 @@ Everything's in the sidebar on the left:
 
 ---
 
-## 📊 Is the clustering any good?
+## Is the clustering any good?
 
 The app shows a **Silhouette Score** after every run. It's a number between -1 and 1 that tells you how well-separated the clusters are.
 
@@ -100,7 +100,7 @@ For K-Means specifically, the **Elbow Method** chart plots inertia vs number of 
 
 ---
 
-## 📦 Libraries used
+## Libraries used
 
 | Library | What it's doing here |
 |---|---|
@@ -112,23 +112,5 @@ For K-Means specifically, the **Elbow Method** chart plots inertia vs number of 
 | `wordcloud` | Actually generating the word clouds |
 | `pandas / numpy` | Handling the data |
 | `scipy` | Supporting the hierarchical clustering math |
-
----
-
-## 💡 Quick glossary (if you're reading this before a viva)
-
-**TF-IDF** — a way to turn text into numbers where words that are rare but frequent in one document get higher scores.
-
-**K-Means** — you pick K, it randomly places K center points, assigns every document to the nearest center, moves the centers to the average of their group, and repeats until nothing changes.
-
-**Agglomerative Clustering** — starts with N clusters (one per document), then keeps merging the two closest ones until you hit your target K.
-
-**LDA** — treats each document as a mixture of topics rather than forcing it into one bucket. It figures out what topics explain the data best.
-
-**PCA** — since TF-IDF gives each document hundreds of dimensions, PCA squishes that down to 2D so we can actually plot it.
-
-**Silhouette Score** — measures how similar a document is to its own cluster compared to other clusters. Higher is better.
-
----
 
 *Semester 6 NLP project 🎓*
